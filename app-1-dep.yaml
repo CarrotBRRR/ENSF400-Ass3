@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-1-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-1
+      run: app-1-sui
+  template:
+    metadata:
+      labels:
+        app: app-1
+        run: app-1-sui
+    spec:
+      containers:
+      - name: app-1
+        image: ghcr.io/denoslab/ensf400-sample-app:v1
+        ports:
+        - containerPort: 3000

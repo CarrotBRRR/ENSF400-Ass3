@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-2
+  labels:
+    run: app-2-sui
+spec:
+  selector:
+    app: app-2
+    run: app-2-sui
+
+  ports:
+    - port: 8080 
+      targetPort: 3000
+      protocol: TCP
